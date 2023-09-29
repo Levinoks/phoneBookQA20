@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
-import utils.RandomUtils;
+//import utils.RandomUtils;
 
 import java.util.concurrent.TimeUnit;
 
@@ -16,9 +16,9 @@ public class BaseTest {
     public WebDriver driver;
     public int emailNameLenght = 7;
     public int passLenght = 8;
-    RandomUtils randomUtils = new RandomUtils();
-    public String email = randomUtils.generateEmail(emailNameLenght);
-    public String password = randomUtils.generatePassword(passLenght);
+   // RandomUtils randomUtils = new RandomUtils();
+//    public String email = randomUtils.generateEmail(emailNameLenght);
+//    public String password = randomUtils.generatePassword(passLenght);
     public WebElement btnLogin;
     public WebElement inputEmail;
     public WebElement inputPass;
@@ -34,8 +34,8 @@ public class BaseTest {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 
-        String emailForLogin = email;
-        String passwordForLogin = password;
+//        String emailForLogin = email;
+//        String passwordForLogin = password;
 
 
     }
