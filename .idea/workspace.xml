@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a6648ba-c76e-40b0-b2dd-b5a252204825" name="Changes" comment="hw7 - baseTest inheritance&#10;Login and Reg tests">
-      <change afterPath="$PROJECT_DIR$/src/test/java/dto/UserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/dto/UserDTOWith.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/manager/AppManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/manager/BaseHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/manager/UserHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/LoginTests.java" afterDir="false" />
+    <list default="true" id="7a6648ba-c76e-40b0-b2dd-b5a252204825" name="Changes" comment="hw8 -architecture Phonebook">
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/RegistrationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/starttests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/starttests/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/starttests/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/starttests/LoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/starttests/RegistrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/starttests/RegistrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/manager/BaseHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/manager/BaseHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/manager/UserHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/manager/UserHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/LoginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/LoginTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,23 +60,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/nosni/Data/TelRan/Automation/IlCarro&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "homeWorkBranch",
+    "last_opened_file_path": "C:/Users/nosni/Data/TelRan/Automation/IlCarro",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\nosni\Data\TelRan\Automation\phoneBookQA20\src\test\java" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.LoginTests.positiveLoginUserDTOWith">
-    <configuration name="LoginTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.RegistrationTests.negativeRegistrationUserDto">
+    <configuration name="LoginTests.negativeLoginUserDTO" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -95,31 +89,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;starttests.LoginTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="LoginTest.positiveLogin" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;starttests.LoginTest.positiveLogin&quot;" />
+            <option value="&quot;tests.LoginTests.negativeLoginUserDTO&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -178,7 +148,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="RegistrationTest.registratitonPositive" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RegistrationTests.negativeRegistrationUserDto" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -191,7 +161,31 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;starttests.RegistrationTest.registratitonPositive&quot;" />
+            <option value="&quot;tests.RegistrationTests.negativeRegistrationUserDto&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="RegistrationTests.positiveRegistrationUserDto" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;tests.RegistrationTests.positiveRegistrationUserDto&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -204,11 +198,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.RegistrationTests.negativeRegistrationUserDto" />
+        <item itemvalue="Gradle.RegistrationTests.positiveRegistrationUserDto" />
+        <item itemvalue="Gradle.LoginTests.negativeLoginUserDTO" />
         <item itemvalue="Gradle.LoginTests.positiveLoginUserDTOWith" />
         <item itemvalue="Gradle.LoginTests.positiveLoginUserDTO" />
-        <item itemvalue="Gradle.RegistrationTest.registratitonPositive" />
-        <item itemvalue="Gradle.LoginTest.positiveLogin" />
-        <item itemvalue="Gradle.LoginTest" />
       </list>
     </recent_temporary>
   </component>
@@ -229,11 +223,20 @@
       <option name="project" value="LOCAL" />
       <updated>1695480810888</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="hw8 -architecture Phonebook">
+      <option name="closed" value="true" />
+      <created>1695996402123</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1695996402123</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="hw7 - baseTest inheritance&#10;Login and Reg tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="hw7 - baseTest inheritance&#10;Login and Reg tests" />
+    <MESSAGE value="hw8 -architecture Phonebook" />
+    <option name="LAST_COMMIT_MESSAGE" value="hw8 -architecture Phonebook" />
   </component>
 </project>
