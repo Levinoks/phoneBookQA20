@@ -2,7 +2,6 @@ package tests;
 
 import dto.UserDTO;
 import dto.UserDTOWith;
-import javafx.scene.control.Alert;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -27,7 +26,7 @@ public class LoginTests extends BaseTest {
     @Test
     public void negativeLoginUserDTO(){
         UserDTO user = new UserDTO("qw122@vv.ff", "123we4@1");
-        app.getUserHelper().login(user);
+        app.getUserHelper().negativeLogin(user);
        
         Assert.assertTrue(app.getUserHelper().loginFailedErrorMessage());
     }
