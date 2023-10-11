@@ -1,6 +1,7 @@
 package manager;
 
 import dto.UserDTO;
+import dto.UserDTOLombok;
 import dto.UserDTOWith;
 import org.openqa.selenium.*;
 import utils.RandomUtils;
@@ -38,6 +39,14 @@ public class UserHelper extends BaseHelper {
         click(btnLoginSubmit);
 
     }
+    public void login(UserDTOLombok user) {
+        click(btnLoginNavBar);
+        inputData(inputEmail, user.getEmail());
+        inputData(inputPassword, user.getPassword());
+        click(btnLoginSubmit);
+
+    }
+
 
     public void negativeLogin(UserDTO user) {
         click(btnLoginNavBar);
@@ -58,6 +67,14 @@ public class UserHelper extends BaseHelper {
 
     }
 
+
+    public void registrationLombok(UserDTOLombok user) {
+        click(btnLoginNavBar);
+        inputData(inputEmail, user.getEmail());
+        inputData(inputPassword, user.getPassword());
+        click(btnRegSubmit);
+    }
+
     public void negativeRegistration(UserDTO user) {
         click(btnLoginNavBar);
         inputData(inputEmail, user.getEmail());
@@ -65,6 +82,7 @@ public class UserHelper extends BaseHelper {
         click(btnRegSubmit);
         pause(10);
         alert();
+
     }
 
 
@@ -104,4 +122,7 @@ public class UserHelper extends BaseHelper {
     public boolean registrationFailedErrorMessage() {
         return isTextEqual(errorMessage2, "Registration failed with code 400");
     }
+
+
+
 }

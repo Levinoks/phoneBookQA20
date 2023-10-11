@@ -1,11 +1,27 @@
 package tests;
 
 import dto.UserDTO;
+import dto.UserDTOLombok;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class RegistrationTests extends BaseTest {
 
+
+
+    @Test
+    public void positiveRegistrationUserDtoLombok() {
+        String email = random.generateEmail(6);
+        String password = random.generatePassword(8);
+        UserDTOLombok userLombok = UserDTOLombok.builder()
+                .email(email)
+                .password(password)
+                .build();
+        app.getUserHelper().registration();
+        Assert.assertTrue(app.getUserHelper().validationSuccessfulLogin());
+
+
+    }
 
     @Test
     public void positiveRegistrationUserDto() {
