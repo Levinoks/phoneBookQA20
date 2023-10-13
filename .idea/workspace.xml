@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a6648ba-c76e-40b0-b2dd-b5a252204825" name="Changes" comment="hw7 - baseTest inheritance&#10;Login and Reg tests">
-      <change afterPath="$PROJECT_DIR$/src/test/java/dto/UserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/dto/UserDTOWith.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/manager/AppManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/manager/BaseHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/manager/UserHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/LoginTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/starttests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/starttests/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/starttests/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/starttests/LoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/starttests/RegistrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/starttests/RegistrationTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="7a6648ba-c76e-40b0-b2dd-b5a252204825" name="Changes" comment="hw7 - baseTest inheritance&#10;Login and Reg tests" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
