@@ -78,13 +78,16 @@ public class BaseHelper {
         driver.switchTo().alert().accept();
     }
 
-    public void clickByXY(By locator, int down, int right){
+    public void clickByXY(By locator, int right, int down){
         Rectangle rect = findElement(locator).getRect();
         int x=rect.getX()+rect.getWidth()/right;
         int y=rect.getY()+rect.getHeight()/down;
         Actions act = new Actions(driver);
-        act.moveByOffset(x,y).click().perform();
+        act.moveByOffset(x,y).click().build().perform();
     }
+
+
+
 
     public void refresh(){
         Actions act = new Actions(driver);

@@ -4,7 +4,6 @@ import dto.UserDTO;
 import dto.UserDTOLombok;
 import dto.UserDTOWith;
 import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Actions;
 import utils.RandomUtils;
 
 
@@ -13,7 +12,7 @@ public class UserHelper extends BaseHelper {
     public UserHelper(WebDriver driver) {
         super(driver);
     }
-  //  Actions act = new Actions(driver);
+
 
     By btnLoginNavBar = By.xpath("//a[@href='/login']");
     By inputEmail = By.xpath("//input[@name='email']");
@@ -29,23 +28,23 @@ public class UserHelper extends BaseHelper {
 
 
     public void login(UserDTO user) {
-       click(btnLoginNavBar);
+        click(btnLoginNavBar);
         inputData(inputEmail, user.getEmail());
         inputData(inputPassword, user.getPassword());
-        click(btnLoginSubmit);
-       // clickByXY(btnLoginSubmit, 2,2);
+        clickByXY(btnLoginSubmit, 2, 2);
         pause(5);
 
     }
 
     public void login(UserDTOWith user) {
-       click(btnLoginNavBar);
+        click(btnLoginNavBar);
         inputData(inputEmail, user.getEmail());
         inputData(inputPassword, user.getPassword());
         click(btnLoginSubmit);
         pause(5);
 
     }
+
     public void login(UserDTOLombok user) {
         click(btnLoginNavBar);
         inputData(inputEmail, user.getEmail());
@@ -78,7 +77,7 @@ public class UserHelper extends BaseHelper {
 
 
     public void registrationLombok(UserDTOLombok user) {
-          click(btnLoginNavBar);
+        click(btnLoginNavBar);
         inputData(inputEmail, user.getEmail());
         inputData(inputPassword, user.getPassword());
         click(btnRegSubmit);
@@ -133,15 +132,13 @@ public class UserHelper extends BaseHelper {
     }
 
 
-
-
     public boolean isBtnSignOutPresent() {
         return isElementPresent(btnSignOutNavBar);
     }
 
     public void signout() {
         clickByJS(btnSignOutJS);
-       // click(btnSignOutNavBar);
+
     }
 
 }
