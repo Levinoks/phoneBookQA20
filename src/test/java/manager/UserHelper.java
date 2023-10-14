@@ -4,6 +4,7 @@ import dto.UserDTO;
 import dto.UserDTOLombok;
 import dto.UserDTOWith;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import utils.RandomUtils;
 
 
@@ -12,31 +13,37 @@ public class UserHelper extends BaseHelper {
     public UserHelper(WebDriver driver) {
         super(driver);
     }
+  //  Actions act = new Actions(driver);
 
     By btnLoginNavBar = By.xpath("//a[@href='/login']");
     By inputEmail = By.xpath("//input[@name='email']");
     By inputPassword = By.xpath("//input[@name='password']");
     By btnLoginSubmit = By.xpath("//button[@name='login']");
-    By btnSignOutNavBar = By.xpath("//button");
+    By btnSignOutNavBar = By.xpath("//button[contains(text(), 'Sign Out')]");
     By errorMessage1 = By.xpath("//div[contains(text(), 'Login Failed with code 401')]");
     By errorMessage2 = By.xpath("//div[contains(text(), 'Registration failed with code 400')]");
     RandomUtils random = new RandomUtils();
     By btnRegSubmit = By.xpath("//button[@name='registration']");
+    By btnContactsNavBar = By.xpath("//a[@href='/contacts']");
+    String btnSignOutJS = "document.querySelector('button').click();";
 
 
     public void login(UserDTO user) {
-        click(btnLoginNavBar);
+       click(btnLoginNavBar);
         inputData(inputEmail, user.getEmail());
         inputData(inputPassword, user.getPassword());
         click(btnLoginSubmit);
+       // clickByXY(btnLoginSubmit, 2,2);
+        pause(5);
 
     }
 
     public void login(UserDTOWith user) {
-        click(btnLoginNavBar);
+       click(btnLoginNavBar);
         inputData(inputEmail, user.getEmail());
         inputData(inputPassword, user.getPassword());
         click(btnLoginSubmit);
+        pause(5);
 
     }
     public void login(UserDTOLombok user) {
@@ -44,6 +51,8 @@ public class UserHelper extends BaseHelper {
         inputData(inputEmail, user.getEmail());
         inputData(inputPassword, user.getPassword());
         click(btnLoginSubmit);
+        pause(5);
+
 
     }
 
@@ -69,7 +78,7 @@ public class UserHelper extends BaseHelper {
 
 
     public void registrationLombok(UserDTOLombok user) {
-        click(btnLoginNavBar);
+          click(btnLoginNavBar);
         inputData(inputEmail, user.getEmail());
         inputData(inputPassword, user.getPassword());
         click(btnRegSubmit);
@@ -112,7 +121,7 @@ public class UserHelper extends BaseHelper {
 
 
     public boolean validationSuccessfulLogin() {
-        return isTextEqual(btnSignOutNavBar, "Sign out");
+        return isTextEqual(btnContactsNavBar, "Contacts");
     }
 
     public boolean loginFailedErrorMessage() {
@@ -124,5 +133,15 @@ public class UserHelper extends BaseHelper {
     }
 
 
+
+
+    public boolean isBtnSignOutPresent() {
+        return isElementPresent(btnSignOutNavBar);
+    }
+
+    public void signout() {
+        clickByJS(btnSignOutJS);
+       // click(btnSignOutNavBar);
+    }
 
 }

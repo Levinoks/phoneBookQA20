@@ -1,8 +1,7 @@
 package manager;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -11,6 +10,7 @@ import java.util.List;
 
 public class BaseHelper {
     WebDriver driver;
+
 
 
     public BaseHelper(WebDriver driver) {
@@ -70,12 +70,31 @@ public class BaseHelper {
     }
 
     public boolean isElementPresent(By locator) {
-        return !driver.findElements(locator).isEmpty();
+        return !findElements(locator).isEmpty();
     }
 
     public void alert() {
         new WebDriverWait(driver, 10).until(ExpectedConditions.alertIsPresent());
         driver.switchTo().alert().accept();
+    }
+
+    public void clickByXY(By locator, int down, int right){
+        Rectangle rect = findElement(locator).getRect();
+        int x=rect.getX()+rect.getWidth()/right;
+        int y=rect.getY()+rect.getHeight()/down;
+        Actions act = new Actions(driver);
+        act.moveByOffset(x,y).click().perform();
+    }
+
+    public void refresh(){
+        Actions act = new Actions(driver);
+        act.sendKeys(Keys.F5).click().perform();
+    }
+
+    public void clickByJS(String locator){
+        JavascriptExecutor js=(JavascriptExecutor) driver;
+        js.executeScript(locator);
+        System.out.println(locator);
     }
 
 

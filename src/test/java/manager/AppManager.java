@@ -13,13 +13,14 @@ public class AppManager {
         driver = new ChromeDriver();
         driver.navigate().to("https://telranedu.web.app/home");
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         userHelper = new UserHelper(driver);
     }
 
     public UserHelper getUserHelper() {
         return userHelper;
     }
+
 
     public void tearDown() {
         driver.quit();

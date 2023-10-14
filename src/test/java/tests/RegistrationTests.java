@@ -3,10 +3,17 @@ package tests;
 import dto.UserDTO;
 import dto.UserDTOLombok;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class RegistrationTests extends BaseTest {
 
+    @BeforeMethod
+    public void preconditions() {
+        signoutIfAuthorized();
+    }
 
 
     @Test
@@ -17,7 +24,7 @@ public class RegistrationTests extends BaseTest {
                 .email(email)
                 .password(password)
                 .build();
-        app.getUserHelper().registration();
+        app.getUserHelper().registrationLombok(userLombok);
         Assert.assertTrue(app.getUserHelper().validationSuccessfulLogin());
 
 
@@ -58,12 +65,12 @@ public class RegistrationTests extends BaseTest {
         Assert.assertTrue(app.getUserHelper().registrationFailedErrorMessage());
     }
 
-    @Test
-    public void allSpecialCharsPassword() {
-        app.getUserHelper().registrationPasswordDiffChars();
-
-
-    }
+//    @Test
+//    public void allSpecialCharsPassword() {
+//        app.getUserHelper().registrationPasswordDiffChars();
+//
+//
+//    }
 
 
 }
