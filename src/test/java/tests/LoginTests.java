@@ -46,5 +46,43 @@ public class LoginTests extends BaseTest {
         Assert.assertTrue(app.getUserHelper().loginFailedErrorMessage());
     }
 
+    @Test
+    public void negativeLoginWrongPassword() {//password without lowercase letters
+        UserDTO user = new UserDTO("qw122@vv.ff", "QAQAQ12345");
+        app.getUserHelper().negativeLogin(user);
+
+        Assert.assertTrue(app.getUserHelper().loginFailedErrorMessage());
+    }
+    @Test
+    public void negativeLoginBlankPassword() {//password is blank
+        UserDTO user = new UserDTO("qw122@vv.ff", "");
+        app.getUserHelper().negativeLogin(user);
+
+        Assert.assertTrue(app.getUserHelper().loginFailedErrorMessage());
+    }
+
+    @Test
+    public void negativeLoginWrongEmail() {//special characters appear consecutively two or more times
+        UserDTO user = new UserDTO("Qwer%%ty1@mydomain.ua", "QAQAQ12345");
+        app.getUserHelper().negativeLogin(user);
+
+        Assert.assertTrue(app.getUserHelper().loginFailedErrorMessage());
+    }
+
+    @Test
+    public void negativeLoginEmail_WO_at() {//without @
+        UserDTO user = new UserDTO("testermydomain.com", "User#123");
+        app.getUserHelper().negativeLogin(user);
+
+        Assert.assertTrue(app.getUserHelper().loginFailedErrorMessage());
+    }
+
+    @Test
+    public void negativeLoginEmail_with2at() {//email is not well-formed with 2 @
+        UserDTO user = new UserDTO("educator94@@gmail.com", "User#123");
+        app.getUserHelper().negativeLogin(user);
+
+        Assert.assertTrue(app.getUserHelper().loginFailedErrorMessage());
+    }
 
 }

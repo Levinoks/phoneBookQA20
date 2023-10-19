@@ -8,8 +8,10 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class RegistrationTests extends BaseTest {
+import java.util.Random;
 
+public class RegistrationTests extends BaseTest {
+Random rand = new Random();
     @BeforeMethod
     public void preconditions() {
         signoutIfAuthorized();
@@ -30,14 +32,14 @@ public class RegistrationTests extends BaseTest {
 
     }
 
-    @Test
-    public void positiveRegistrationUserDto() {
-
-        app.getUserHelper().registration();
-        Assert.assertTrue(app.getUserHelper().validationSuccessfulLogin());
-
-
-    }
+//    @Test
+//    public void positiveRegistrationUserDto() {
+//
+//        app.getUserHelper().registration();
+//        Assert.assertTrue(app.getUserHelper().validationSuccessfulLogin());
+//
+//
+//    }
 
     @Test
     public void negativeRegistrationPasswordWithoutLetters() {
@@ -71,6 +73,53 @@ public class RegistrationTests extends BaseTest {
 //
 //
 //    }
+
+    @Test
+    public void negativeRegistrationPassword_lessSymbols() {//7 symbols
+        UserDTO user = new UserDTO(random.generateEmail(7), "User#12");
+        app.getUserHelper().negativeRegistration(user);
+
+        Assert.assertTrue(app.getUserHelper().registrationFailedErrorMessage());
+    }
+
+//    @Test   //according to the documentation it is not possible to create a password more than 15 symbols.But the test failed with a password of 16 symbols. it is a bug!!!
+//    public void negativeRegistrationPassword_moreSymbols() {//15 symbols
+//        UserDTO user = new UserDTO("Educator22@mydomain.com", "UserUserU#123456");
+//        app.getUserHelper().negativeRegistration(user);
+//
+//        Assert.assertTrue(app.getUserHelper().registrationFailedErrorMessage());
+//    }
+    @Test
+    public void negativeRegistrationUserAlreadyExist() {//user already exist
+        UserDTO user = new UserDTO("Educator10@mydomain", "User#123");
+        app.getUserHelper().negativeRegistration(user);
+
+        Assert.assertTrue(app.getUserHelper().registrationFailedErrorMessage3());
+    }
+
+    @Test
+    public void negativeRegistrationEmail_WO_at() {//without @
+        UserDTO user = new UserDTO(random.generateString(4)+"domaincom", "User#123");
+        app.getUserHelper().negativeRegistration(user);
+
+        Assert.assertTrue(app.getUserHelper().registrationFailedErrorMessage());
+    }
+//    @Test  //according to the documentation it is not possible to make registration with cyrillic email. it is a bug!!!
+//    public void negativeRegistrationEmailCyrillic() {//all parts are in cyrillic
+//        UserDTO user = new UserDTO("тестер"+ rand.nextInt()+"22@гмейл.ком", "User#123");
+//        app.getUserHelper().negativeRegistration(user);
+//
+//        Assert.assertTrue(app.getUserHelper().registrationFailedErrorMessage());
+//    }
+
+    @Test
+    public void negativeRegistrationEmail_moreThan65Chars() {//more than max 65 characters in the recipient name
+        UserDTO user = new UserDTO(random.generateString(65)+"@domain.com", "User#123");
+        app.getUserHelper().negativeRegistration(user);
+
+        Assert.assertTrue(app.getUserHelper().registrationFailedErrorMessage());
+    }
+
 
 
 }

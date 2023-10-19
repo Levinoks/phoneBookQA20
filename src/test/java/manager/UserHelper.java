@@ -21,6 +21,7 @@ public class UserHelper extends BaseHelper {
     By btnSignOutNavBar = By.xpath("//button[contains(text(), 'Sign Out')]");
     By errorMessage1 = By.xpath("//div[contains(text(), 'Login Failed with code 401')]");
     By errorMessage2 = By.xpath("//div[contains(text(), 'Registration failed with code 400')]");
+    By errorMessage3 = By.xpath("//div[contains(text(), 'Registration failed with code 409')]");
     RandomUtils random = new RandomUtils();
     By btnRegSubmit = By.xpath("//button[@name='registration']");
     By btnContactsNavBar = By.xpath("//a[@href='/contacts']");
@@ -129,6 +130,8 @@ public class UserHelper extends BaseHelper {
 
     public boolean registrationFailedErrorMessage() {
         return isTextEqual(errorMessage2, "Registration failed with code 400");
+    }public boolean registrationFailedErrorMessage3() {
+        return isTextEqual(errorMessage3, "Registration failed with code 409");
     }
 
 
